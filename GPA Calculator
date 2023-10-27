@@ -1,0 +1,23 @@
+bengali = int(input("Enter marks in Bengali: "))
+english = int(input("Enter marks in English: "))
+math = int(input("Enter marks in Math: "))
+science = int(input("Enter marks in Science: "))
+
+average = (bengali + english + math + science) / 4
+
+if 0 <= average <= 40:
+    grade = "F"
+elif 41 <= average <= 60:
+    grade = "D"
+elif 61 <= average <= 70:
+    grade = "C"
+elif 71 <= average <= 80:
+    grade = "B"
+elif 81 <= average <= 90:
+    grade = "A"
+else:
+    grade = "A+"
+
+print("Subject-wise Marks: Bengali:", bengali, "English:", english, "Math:", math, "Science:", science)
+print("Average Mark:", average)
+print("Grade:", grade)
