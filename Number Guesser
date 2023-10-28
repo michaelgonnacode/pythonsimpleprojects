@@ -1,0 +1,23 @@
+import random
+
+low = 1
+high = 50
+correct_answer = random.randrange(low, high + 1)
+chances = 5
+
+print("Welcome to the Number Guessing Game!")
+print("Guess a number between", low, "and", high)
+
+for attempt in range(chances):
+    user_guess = int(input("Attempt " + str(attempt + 1) + ": Enter your guess: "))
+    
+    if user_guess < correct_answer:
+        print("Correct answer is greater!")
+    elif user_guess > correct_answer:
+        print("Correct answer is smaller!")
+    else:
+        print("Congratulations! You've won!")
+        break
+
+if user_guess != correct_answer:
+    print("Sorry, you've run out of chances. The correct answer was", correct_answer, "You lose!")
