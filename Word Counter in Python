@@ -1,0 +1,24 @@
+def read_file(file_name):
+    try:
+        with open(file_name, 'r') as file:
+            return file.read().splitlines()
+    except FileNotFoundError:
+        return []
+
+search_words = ["Python", "C", "00P", "Hello", "Java"]
+
+def count_words_in_file(file_name, search_words):
+    word_count = {word: 0 for word in search_words}
+
+    lines = read_file(file_name)
+
+    for line in lines:
+        for word in line.split():
+            for search_word in search_words:
+                if search_word.lower() == word.lower():
+                    word_count[search_word] += 1
+
+    for word, count in word_count.items():
+        print(word + " -> " + str(count))
+
+count_words_in_file("input.txt", search_words)
